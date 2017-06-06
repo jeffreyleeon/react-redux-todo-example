@@ -1,13 +1,44 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addTodo } from '../actionsCreators';
 
 class AddTodo extends Component {
   render() {
+    const { addTodo } = this.props;
+    let input;
     return (
-      <div>
-      	<p>Add Todo</p>
-      </div>
-    );
+        <div>
+          <form onSubmit={e => {
+            e.preventDefault();
+            if (!input.value.trim()) {
+              return;
+            }
+            addTodo(input.value);
+            input.value = '';
+          }}>
+            <input ref={node => {
+              input = node;
+            }} />
+            <button type="submit">
+              Add Todo
+            </button>
+          </form>
+        </div>
+      )
   }
 }
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    addTodo: (text) => {
+      dispatch(addTodo(text));
+    }
+  }
+}
+
+AddTodo = connect(
+    undefined,
+    mapDispatchToProps
+)(AddTodo);
 
 export default AddTodo;
