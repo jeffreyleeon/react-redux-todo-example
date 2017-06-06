@@ -1,3 +1,27 @@
+react-redux-todo-example
+==================
+
+Introduction
+------------------
+A practice of using react redux referenced from [example](http://redux.js.org/docs/basics/ExampleTodoList.html)
+
+Lesson Learnt
+------------------
+1. How to create project using create-react-app
+2. Need to install both 'react-redux' and 'redux' from npm
+3. Components (Provider) are from 'react-redux' and things like combineReducers, connect are from 'redux', which is totally independent of react
+4. Using index.js in different folders to combine actions, actionCreators and reducers
+5. actions are text for recognizing action type
+6. actionsCreators contains functions that return a payload of action in JSON {type: ..., text: ..., id: ...}, for example
+7. reducer is function that return a new state based on the action provided
+8. reducer always returns a new (cloned) object
+9. Distinguishing between Presentational Components and Container Components
+10. Container Componenets aware of the "store" using connect(mapStatesToProps, mapDispatchToProps)(TargetComponent).
+11. Presentational Components NOT aware of the "store" and only cares about props
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
