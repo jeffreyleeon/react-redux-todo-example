@@ -19,7 +19,6 @@ class TodoList extends Component {
       todos,
       onTodoClick
     } = this.props;
-    console.log('=====todos ', todos);
     return (
       <ul>
         {todos.map(todo =>

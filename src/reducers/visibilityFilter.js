@@ -1,11 +1,10 @@
 import actions from '../actions';
 
-const visibilityFilter = (state = [], action) => {
+const visibilityFilter = (state = "SHOW_ALL", action) => {
   switch (action.type) {
     case actions.setFilterType:
       {
-        console.log('=====setFilterType');
-        return state;
+        return action.filterType;
       }
     default:
       return state;
