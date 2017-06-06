@@ -16,11 +16,14 @@ const todos = (state = [], action) => {
       }
     case actions.toggleTodo:
       {
-        return state.map(todo => {
-          (todo.id === action.id) ?
-            {...todo, completed: !todo.completed} : todo;
+        const ret = state.map(todo => {
+          if (todo.id === action.id) {
+            return {...todo, completed: !todo.completed}
+          } else {
+            return todo;
+          } 
         });
-        return state;
+        return ret;
       }
     default:
       return state
